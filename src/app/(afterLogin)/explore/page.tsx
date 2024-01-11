@@ -1,3 +1,3 @@
 export default function () {
-  return <div>explore</div>
+  return <main>explore</main>
 }
