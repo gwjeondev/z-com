@@ -2,7 +2,7 @@
 
 import style from './modal.module.css'
 import { useRef, useState } from 'react'
-export default function TweetModal() {
+export default function TweetModalPage() {
   const [content, setContent] = useState()
   const imageRef = useRef<HTMLInputElement>(null)
   const onSubmit = () => {}

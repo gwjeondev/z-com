@@ -1,7 +1,7 @@
 import Home from '@/app/(afterLogin)/home/page'
 import TweetModal from '@/app/(afterLogin)/@modal/(.)compose/tweet/page'
 
-export default function () {
+export default function TweetPage() {
   return (
     <>
       <Home />
