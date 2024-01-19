@@ -28,6 +28,7 @@ export default function Post({ noImage }: Props) {
   }
   if (Math.random() > 0.5 && !noImage) {
     const randomNumber = Math.random()
+
     if (randomNumber < 0.25) {
       target.Images.push({ imageId: 1, link: faker.image.urlLoremFlickr() })
     } else if (randomNumber > 0.5) {
