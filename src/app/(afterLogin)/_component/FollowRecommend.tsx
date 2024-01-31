@@ -10,7 +10,6 @@ export default function FollowRecommend() {
   const user = data?.user
 
   const session = useSession()
-  console.log('data', session)
   const router = useRouter()
 
   const onFollow: MouseEventHandler<HTMLButtonElement> = (e) => {

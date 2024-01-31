@@ -7,53 +7,46 @@ import ActionButtons from '@/app/(afterLogin)/_component/ActionButtons'
 import PostArticle from '@/app/(afterLogin)/_component/PostArticle'
 import { faker } from '@faker-js/faker'
 import PostImages from '@/app/(afterLogin)/_component/PostImages'
+import { Post } from '@/model/Post'
 
 dayjs.locale('ko')
 dayjs.extend(relativeTime)
 
 type Props = {
   noImage?: boolean
+  post: Post
 }
-export default function Post({ noImage }: Props) {
-  const target = {
-    postId: 1,
-    User: {
-      id: 'elonmusk',
-      nickname: 'Elon Musk',
-      image: '/yRsRRjGO.jpg',
-    },
-    content: '클론코딩 라이브로 하니 너무 힘들어요 ㅠㅠ',
-    createdAt: new Date(),
-    Images: [] as any[],
-  }
-  if (Math.random() > 0.5 && !noImage) {
+export default function Post({ post, noImage }: Props) {
+  const target = post
+
+  /* if (Math.random() > 0.5 && !noImage) {
     const randomNumber = Math.random()
 
     if (randomNumber < 0.25) {
-      target.Images.push({ imageId: 1, link: faker.image.urlLoremFlickr() })
+      post.Images.push({ imageId: 1, link: faker.image.urlLoremFlickr() })
     } else if (randomNumber > 0.5) {
-      target.Images.push(
+      post.Images.push(
         { imageId: 1, link: faker.image.urlLoremFlickr() },
         { imageId: 2, link: faker.image.urlLoremFlickr() }
       )
     } else if (randomNumber > 0.75) {
-      target.Images.push(
+      post.Images.push(
         { imageId: 1, link: faker.image.urlLoremFlickr() },
         { imageId: 2, link: faker.image.urlLoremFlickr() },
         { imageId: 3, link: faker.image.urlLoremFlickr() }
       )
     } else {
-      target.Images.push(
+      post.Images.push(
         { imageId: 1, link: faker.image.urlLoremFlickr() },
         { imageId: 2, link: faker.image.urlLoremFlickr() },
         { imageId: 3, link: faker.image.urlLoremFlickr() },
         { imageId: 4, link: faker.image.urlLoremFlickr() }
       )
     }
-  }
+  } */
 
   return (
-    <PostArticle post={target}>
+    <PostArticle post={post}>
       <div className={style.postWrapper}>
         <div className={style.postUserSection}>
           <Link href={`/${target.User.id}`} className={style.postUserImage}>
